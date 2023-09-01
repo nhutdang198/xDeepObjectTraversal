@@ -1,0 +1,27 @@
+{
+  "name": "x-deep-object-traversal",
+  "version": "10.000.01",
+  "description": "**xDeepObjectTraversal** is a recursive function that traverses a nested object and calls a callback function for each key-value pair it encounters. It is a depth-first traversal, meaning it explores as deeply into the nested objects as possible before moving on to the next sibling key at the current level.",
+  "main": "xDeepObjectTraversal.js",
+  "devDependencies": {
+    "@types/jest": "^29.5.4",
+    "jest": "^29.6.3",
+    "ts-jest": "^29.1.1",
+    "typescript": "^5.1.6"
+  },
+  "scripts": {
+    "test": "npx jest",
+    "build": "npx tsc xDeepObjectTraversal.ts"
+  },
+  "author": "nhutdm",
+  "license": "MIT",
+  "keywords": [
+    "x-deep-object-traversal",
+    "x deep object traversal",
+    "deep object traversal",
+    "loop through deep object",
+    "deep object iteration",
+    "object traversal",
+    "deep object"
+  ]
+}
