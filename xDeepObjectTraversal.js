@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.xDeepArrayTraversal = void 0;
+exports.xDeepObjectTraversal = void 0;
 /**
  * Recursively traverses a nested object and calls a callback function for each key-value pair.
  *
@@ -29,17 +29,17 @@ exports.xDeepArrayTraversal = void 0;
  * // Traverse the nested object and log key-value pairs
  * xDeepObjectTraversal(nestedObject, logKeyAndValue);
  */
-function xDeepArrayTraversal(deepArray, callback) {
-    for (var _i = 0, deepArray_1 = deepArray; _i < deepArray_1.length; _i++) {
-        var iterator = deepArray_1[_i];
-        if (Array.isArray(iterator)) {
-            xDeepArrayTraversal(iterator, callback);
-        }
-        else {
-            if (typeof callback === 'function') {
-                callback(iterator);
+function xDeepObjectTraversal(deepObject, callback) {
+    for (var key in deepObject) {
+        if (deepObject.hasOwnProperty(key)) {
+            var value = deepObject[key];
+            // Call the callback function with the current key and value
+            callback(key, value);
+            // If the current value is an object, recursively traverse it
+            if (typeof value === 'object' && value !== null) {
+                xDeepObjectTraversal(value, callback);
             }
         }
     }
 }
-exports.xDeepArrayTraversal = xDeepArrayTraversal;
+exports.xDeepObjectTraversal = xDeepObjectTraversal;
